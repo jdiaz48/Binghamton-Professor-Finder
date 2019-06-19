@@ -1,0 +1,28 @@
+{
+  "name": "Binghamton Professor Finder",
+  "version": "1.6",
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "description": "Connects RateMyProfessors with Binghamton's Look Up Classes page so you can get the schedule you want without doing extra work.",
+  "icons": {
+    "16": "image16.png",
+    "128": "image128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://ssb.cc.binghamton.edu/*"],
+      "js": ["main.js"],
+      "css": ["main.css"],
+      "html": ["main.html"]
+    }
+  ],
+  "permissions":
+  [
+    "http://www.ratemyprofessors.com/*",
+    "tabs"
+  ],
+  "background": {
+    	"scripts": ["data.js"],
+    	"persistent": false
+  }
+}
